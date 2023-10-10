@@ -5,6 +5,10 @@
 	export let data;
 </script>
 
+<svelte:head>
+	<title>Browse | Machine Learning</title>
+</svelte:head>
+
 <div class="flex flex-col gap-5">
 	{#each Object.entries(data.drawings) as [label, drawings]}
 		<div>

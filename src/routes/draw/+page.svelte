@@ -89,6 +89,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Draw | Machine Learning</title>
+</svelte:head>
+
 <div>Draw a {data.label.title}.</div>
 
 <canvas
