@@ -27,5 +27,9 @@
 		"typescript": "^5.0.0",
 		"vite": "^4.4.2"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"better-sqlite3": "^8.7.0",
+		"knex": "^3.0.1"
+	}
 }
