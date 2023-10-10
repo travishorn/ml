@@ -29,6 +29,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource-variable/inter": "^5.0.13",
 		"better-sqlite3": "^8.7.0",
 		"knex": "^3.0.1"
 	}

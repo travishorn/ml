@@ -1,6 +1,3 @@
-<script>
-	/** @type {import('./$types').PageData} */
-	export let data;
-</script>
+<h2 class="text-2xl">Home</h2>
 
-<div>{JSON.stringify(data.labels)}</div>
+<a href="/draw">Draw</a>
