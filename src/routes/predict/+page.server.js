@@ -1,5 +1,5 @@
 import { db } from '$lib/server/database.js';
-import { getWidth, getHeight } from '$lib/util.js';
+import { measure } from '$lib/util.js';
 import { capitalizeFirstLetter } from '$lib/util.js';
 
 /** @type {import('./$types').PageServerLoad} */
@@ -20,8 +20,8 @@ export async function load() {
     return {
       id: drawing.id,
       label: capitalizeFirstLetter(drawing.title),
-      width: getWidth(paths),
-      height: getHeight(paths)
+      width: measure(paths, "width"),
+      height: measure(paths, "height")
     };
   });
 

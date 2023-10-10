@@ -11,25 +11,12 @@ export const capitalizeFirstLetter = (str) => {
 }
 
 /**
- * @param {Array<Array<Number>>} paths 
+ * @param {Array<Array<Number>>} paths
+ * @param {String} dimension
  * @returns {Number}
  */
-export const getWidth = (paths) => {
-  const points = paths.flat();
-  const x = points.map(p => p[0]);
-  const min = Math.min(...x);
-  const max = Math.max(...x);
-  return max - min;
-};
-
-/**
- * @param {Array<Array<Number>>} paths 
- * @returns {Number}
- */
-export const getHeight = (paths) => {
-  const points = paths.flat();
-  const y = points.map(p => p[1]);
-  const min = Math.min(...y);
-  const max = Math.max(...y);
-  return max - min;
+export const measure = (paths, dimension) => {
+  const i = dimension === "width" ? 0 : 1;
+  const coordinate = paths.flat().map(p => p[i]);
+  return Math.max(...coordinate) - Math.min(...coordinate);
 };
