@@ -18,7 +18,7 @@
 	function draw() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-		for (const path of paths) {
+		paths.forEach((path) => {
 			ctx.strokeStyle = 'white';
 			ctx.lineWidth = 3;
 			ctx.beginPath();
@@ -29,12 +29,13 @@
 			ctx.lineCap = 'round';
 			ctx.lineJoin = 'round';
 			ctx.stroke();
-		}
+		});
 	}
 
 	function undo() {
 		if (paths.length > 0) {
 			paths.pop();
+			paths = paths;
 			draw();
 		}
 	}
@@ -88,8 +89,6 @@
 	});
 </script>
 
-<h2 class="text-2xl">Draw</h2>
-
 <div>Draw a {data.label.title}.</div>
 
 <canvas
@@ -105,10 +104,19 @@
 	on:touchend={touchEnd}
 />
 
-<button on:click={undo} disabled={paths.length === 0}>Undo</button>
+<div class="flex gap-2 py-3">
+	<button
+		class="bg-neutral-700 hover:bg-neutral-600 cursor-pointer px-2 py-1 rounded disabled:opacity-50 disabled:hover:bg-neutral-700 disabled:cursor-not-allowed"
+		on:click={undo}
+		disabled={paths.length === 0}>Undo</button
+	>
 
-<form method="post">
-	<input type="hidden" name="labelId" value={data.label.id} />
-	<input type="hidden" name="paths" value={JSON.stringify(paths)} />
-	<button disabled={paths.length === 0}>Done</button>
-</form>
+	<form method="post">
+		<input type="hidden" name="labelId" value={data.label.id} />
+		<input type="hidden" name="paths" value={JSON.stringify(paths)} />
+		<button
+			class="bg-neutral-700 hover:bg-neutral-600 cursor-pointer px-2 py-1 rounded disabled:opacity-50 disabled:hover:bg-neutral-700 disabled:cursor-not-allowed"
+			disabled={paths.length === 0}>Done</button
+		>
+	</form>
+</div>

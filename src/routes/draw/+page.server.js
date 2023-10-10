@@ -1,4 +1,5 @@
 import { randomUUID } from 'node:crypto';
+import { sample } from 'lodash';
 import { db } from '$lib/server/database.js';
 
 /** @type {import('./$types').PageServerLoad} */
@@ -10,7 +11,7 @@ export async function load() {
     WHERE     l.enabled = 1
   `);
 
-  const randomLabel = labels[Math.floor(Math.random() * labels.length)];
+  const randomLabel = sample(labels);
 
   return {
     label: randomLabel
