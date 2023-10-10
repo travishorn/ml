@@ -63,13 +63,19 @@ Click on **Browse**
 
 Scroll to view submitted drawings
 
-## Analyze chart(s)
+## Predict
 
 Go to http://localhost:5173
 
-Click on **Charts**
+Click on **Predict**
 
-Look and interact with the chart(s)
+The chart at the top plots data on two features: width and height.
+
+**To do (under development):**
+
+Draw in the box at the bottom. As you draw, the features of your drawing are
+plotted alongside the training data. A prediction is made based on the nearest
+neighbors to your drawing.
 
 ## License
 

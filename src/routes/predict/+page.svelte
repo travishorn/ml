@@ -29,7 +29,14 @@
 </script>
 
 <svelte:head>
-	<title>Charts | Machine Learning</title>
+	<title>Predict | Machine Learning</title>
 </svelte:head>
 
-<div class="bg-neutral-900 border-2 border-neutral-700" role="img" bind:this={chart} />
+<div class="bg-neutral-900 border-2 border-neutral-700 mb-5" role="img" bind:this={chart} />
+
+<div>
+	<em
+		>To do (under development): a canvas on which to draw will go here. A prediction will be made
+		based on the features of the drawing compared to the training data above.</em
+	>
+</div>
