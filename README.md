@@ -71,11 +71,12 @@ Click on **Predict**
 
 The chart at the top plots data on two features: width and height.
 
-**To do (under development):**
-
 Draw in the box at the bottom. As you draw, the features of your drawing are
-plotted alongside the training data. A prediction is made based on the nearest
-neighbors to your drawing.
+plotted alongside the training data. 
+
+*To do (under development):*
+
+A prediction is made based on the nearest neighbors to your drawing.
 
 ## License
 
